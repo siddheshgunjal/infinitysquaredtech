@@ -1,0 +1,37 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+    <!-- <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="gesture.js"></script> -->
+  </head>
+  <body>
+    <a-scene mindar-image="filterMinCF:0.001; filterBeta: 0.01; imageTargetSrc: assets/multi-target/new_brochure/targets.mind" color-space="sRGB" renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true; precision: medium; colorManagement: true; physicallyCorrectLights;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <a-asset-item id="1bhk" src="assets/multi-target/1bhk.glb"></a-asset-item>
+        <a-asset-item id="2bhk" src="assets/multi-target/2bhk.glb"></a-asset-item>
+        <a-asset-item id="3bhk" src="assets/multi-target/3bhk.glb"></a-asset-item>
+        <a-asset-item id="building" src="assets/multi-target/building.glb"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model rotation="90 0 0 " position="0.5 -0.4 0" scale="0.15 0.15 0.15" src="#1bhk">
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model rotation="90 0 0 " position="-2.8 3.7 0" scale="0.15 0.15 0.15" src="#2bhk">
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.01 0.01 0.01" src="#3bhk">
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.04 0.04 0.04" src="#building">
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

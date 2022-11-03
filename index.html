@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive 3D</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <div class="page1">
+
+    <iframe id="background" src="three.js/examples/webgl_points_billboards.html"></iframe>
+    <div class="hero-inner" style="opacity: 1; visibility: visible;">
+      <h1>Showcase your product in Immersive way</h1>
+      <h4>We bulid epic, realtime interactive experiences to blow people's minds</h4>
+    </div>
+    
+    <div class="wrap">
+
+      <div class="anim_button1">
+        <button class="button" id="showpanel_1">3D Showcase</button>
+      </div>
+      <!-- <div class="anim_button2">
+        <button class="button" onclick="window.open('/virtual_museum_demo');">Virtual Walkthrough</button>
+      </div> -->
+
+      <div class="anim_button2">
+        <button class="button" id="showpanel_2">Virtual Staging</button>
+      </div>
+
+      <div class="anim_button3">
+        <button class="button" id="showpanel_3">Augmented Reality</button>
+      </div>
+
+    </div>
+
+    <div class ="vt_panel" id="panel_1" style="display: none;">
+      
+      <div class="modelinfo">
+
+        <div id="brand_logo">
+          <img src="3d_model/re5.jpg" style="height: 100%; width: auto;">
+        </div>
+        <div class="content_">
+          <p class="title_para"><b>Transforming society with the homes of tomorrow.</b></p>
+          <p class="info_para">This project offers 1 BHK & 2 BHK  Residences. Providing access to extensive highways, schools, markets, hospitals, etc. The Project is a good investment for your next home. Apartments at XYZ homes are well created.</p>
+          <p class="info_para">The overall functioning of the apartment is well thought of. Every room in this expansion has cross-ventilation windows to grant ventilation throughout the day. Also, because of these windows, there is an ample amount of sunlight coming inside the apartment. In terms of other internal amenities, the room sizes are lavish, thereby giving a luxurious feeling to the apartment. Secondly, the full height french window allows clear and direct looks at the nearby freeway and city skyline.</p>
+          <p class="info_para"><b>Please use below buttons for detailed look at floor plan of your <del>home</del> <ins>Dream Home</ins> in 3D</b></p>
+        </div>
+        <div class="button_div">
+          <button class="click_button" id="building_button" style="display: none; margin-right: 10%;">Building</button>
+          <button class="click_button" id="bhk_1">1 BHK</button>
+          <button class="click_button" id="bhk_2" style="margin-left: 10%;">2 BHK</button>
+          <!-- <button class="click_button_tour" id="tour_button" onclick="window.open('/virtual_museum_demo');" style="margin-left: 10%;">Virtual Tour</button> -->
+        </div>
+
+      </div>
+      <iframe id="model1" src="building.html" scrolling="no"></iframe>
+      <button class="close" id="close_panel_1"></button>
+
+    </div>
+
+    <div class ="vt_panel" id="panel_2" style="display: none;">
+      
+      <div class="modelinfo">
+        <div id="brand_logo">
+          <img src="3d_model/re5.jpg" style="height: 100%; width: auto;">
+        </div>
+        <div class="content_">
+          <p class="title_para"><b>Virtual Staging of Environment</b></p>
+          <p class="info_para">For architects, project planners, builders and buyers. Take your entire projects and convert it into a hyper-realistic, 3D virtual walkthrough that shows every detail of planned projects.</p>
+          <p class="info_para">Step in and discover your project's beauty in every detail. Customizable features, such as buttons and window layouts allow you to adapt your virtual walkthrough perfectly to your design</p>
+          <p class="info_para">We highlight specific elements through the use of video hotspots, detail popup photos, objects highlighted with extra information, timelapse videos. With this we put in value the elements of the project, such as works of art (paintings, engravings, sculptures …), construction elements, finishes, and other "extras".</p>
+          <p class="info_para"><b>Click below button to experience the Virtual Walkthrough on your device.</b></p>
+        </div>
+        <div class="button_div">
+          <button class="click_button_tour" id="tour_button" onclick="window.open('demo_tour/');">Open Tour</button>
+        </div>
+
+      </div>
+
+      <div id="model1">
+        <video class="back_video" id="back_video_player" loop muted>
+          <source src="3d_model/3dvista_demo.webm" type="video/webm">
+        </video>
+      </div>
+      <button class="close" id="close_panel_2"></button>
+
+    </div>
+
+
+    <div class ="vt_panel" id="panel_3" style="display: none;">
+      
+      <div class="modelinfo">
+
+        <div id="brand_logo">
+          <img src="3d_model/re5.jpg" style="height: 100%; width: auto;">
+        </div>
+        <div class="content_">
+          <p class="title_para"><b>Augmented Reality Enabled Brochures</b></p>
+          <p class="info_para">Download the sample brochure from here: <a href="https://cdn.glitch.global/b570797e-d045-48a6-a0a3-6d5ceede7bbf/ar_brochure.pdf?v=1659510410562" target="_blank">Sample Brochure</a> </p>
+          <p class="info_para">Scan the image with AR marker from the brochure to see the entire floot plan apear in 3D on top of brochure page.</p>
+          <p class="info_para">No installation of app needed for this feature. It is simple to use, fast and compatible with all handheld devices with browser & camera.</p>
+        </div>
+        <div class="button_div">
+          <button class="click_button_tour" id="tour_button" onclick="window.open('WebAR/');">Click or Scan QR code</button>
+        </div>
+
+      </div>
+      <!-- <iframe id="model1" src="building.html" scrolling="no"></iframe> -->
+      <div id="model2">
+        <img class="qrcode" src="3d_model/web_AR.png">
+      </div>
+      <button class="close" id="close_panel_3"></button>
+
+    </div>
+
+  </div>
+
+  <script src="script_three.js"></script>
+
+</body>
+</html>
