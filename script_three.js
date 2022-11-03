@@ -47,21 +47,21 @@ $(document).ready(function(){
 
   $("#building_button").click(function(){
     $("#building_button").hide();
-    $("#model1").attr('src', 'building.html');
+    $("#model1").attr('src', 'pages/building.html');
     $("#bhk_1").prop('disabled', false);
     $("#bhk_2").prop('disabled', false);
   });
 
   $("#bhk_1").click(function(){
     $("#building_button").show();
-    $("#model1").attr('src', '1bhk.html');
+    $("#model1").attr('src', 'pages/1bhk.html');
     $("#bhk_1").prop('disabled', true);
     $("#bhk_2").prop('disabled', false);
   });
 
   $("#bhk_2").click(function(){
     $("#building_button").show();
-    $("#model1").attr('src', '2bhk.html');
+    $("#model1").attr('src', 'pages/2bhk.html');
     $("#bhk_2").prop('disabled', true);
     $("#bhk_1").prop('disabled', false);
   });
